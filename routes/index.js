@@ -58,5 +58,8 @@ router.get('/feed/:feedID', async (req, res) => {
   // res.send('virker fra exportFeed');
   res.send(parsedToJSON);
 });
+router.get('/test', async (req, res) => {
+  res.send('test heroku deployment');
+});
 
 module.exports = router; // We're exporting the router
