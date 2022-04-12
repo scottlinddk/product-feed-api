@@ -5,6 +5,6 @@ const env = process.env.NODE_ENV;
 // app.use('/api/feed', feed);
 // app.use('/api/test', test);
 const port = config[env].port;
-app.listen(port || process.env.PORT, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`server running at port ${port}`);
 });
