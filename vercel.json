@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "name": "product-feed-api",
+  "buildCommand": "npm run prod"
+  "builds": [
+    { "src": "server.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/server.js" }
+  ]
+}
