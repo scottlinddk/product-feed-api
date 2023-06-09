@@ -1,7 +1,7 @@
 {
-  "name": "webapitemplate",
+  "name": "@scttlnd/partner-ads-feed-json",
   "version": "1.0.0",
-  "description": "",
+  "description": "Få dit feed fra Partner Ads ud som JSON",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Web-Api-MMD/webapitemplate#readme",
   "dependencies": {
+    "@scttlnd/partner-ads-feed-json": "^1.0.0",
     "axios": "^0.26.1",
     "config": "^3.3.6",
     "cors": "^2.8.5",
