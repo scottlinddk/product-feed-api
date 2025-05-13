@@ -1,6 +1,6 @@
-const axios = require("axios");
+import axios from "axios";
 
-exports.getShortLink = async (incomingUrl) => {
+export const getShortLink = async (incomingUrl: string) => {
     const encodedParams = new URLSearchParams();
     encodedParams.set("url", incomingUrl);
 
@@ -18,10 +18,11 @@ exports.getShortLink = async (incomingUrl) => {
     };
 
     try {
-        const response = await axios.request(options);
+        const response = await axios.request(options as any);
         // console.log(response.data.short_url);
         return response.data.short_url;
     } catch (error) {
         console.error(error);
     }
 };
+
