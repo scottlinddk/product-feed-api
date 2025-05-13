@@ -1,5 +1,5 @@
-import { app } from "./app";
-import { config } from "./config/config";
+import app from "./app.js";
+import { config } from "./config/config.js";
 const env: string = process.env.NODE_ENV || "development";
 const port = config[env]?.port || 3000;
 

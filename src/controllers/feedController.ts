@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import { Products, Product } from "../models/ProductModel";
-import { FeedService } from "../services/FeedService";
+import { Products, PagedProducts } from "../models/ProductModel.js";
+import { FeedService } from "../services/FeedService.js";
 
 // Create an item
 // export const createItem = (req: Request, res: Response, next: NextFunction) => {
@@ -27,12 +27,26 @@ export const getProducts = async (req: Request, res: Response, next: NextFunctio
         if (!items.length) {
             return res.status(404).json({ message: "No items found" });
         }
+        const page = parseInt(req.query.page as string) || 1;
+        const limit = parseInt(req.query.limit as string) || 10;
+        const startIndex = (page - 1) * limit;
+        const endIndex = page * limit;
+        const paginatedItems: (typeof Products)[] = items.slice(startIndex, endIndex) as (typeof Products)[];
+        const totalPages = Math.ceil(items.length / limit);
+        const totalItems = items.length;
+        const pagedProducts: PagedProducts = {
+            page,
+            totalPages,
+            totalItems,
+            limit,
+            items: paginatedItems,
+            previousPage: startIndex > 0 ? `?page=${page - 1}&limit=${limit}` : null,
+            nextPage: endIndex < items.length ? `?page=${page + 1}&limit=${limit}` : null,
+            hasPreviousPage: startIndex > 0,
+            hasNextPage: endIndex < items.length
+        } as PagedProducts;
 
-        // if (!req.params.feedID.match(/^[0-9a-fA-F]{24}$/)) {
-        //     return res.status(400).json({ message: "Invalid Feed ID format" });
-        // }
-
-        res.json(items);
+        res.json(pagedProducts);
     } catch (error) {
         res.status(500).json({ message: "Internal Server Error" });
         next(error);

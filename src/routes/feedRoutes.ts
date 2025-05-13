@@ -1,10 +1,6 @@
 import { Router } from "express";
 const router = Router();
-
-import { FeedService } from "../services/FeedService";
-import { ProductService } from "../services/ProductService";
-
-import { getProducts } from "../controllers/feedController";
+import { getProducts } from "../controllers/feedController.js";
 
 const baseUrl: string = "/feed/";
 

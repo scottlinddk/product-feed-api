@@ -1,6 +1,6 @@
-import { Product } from "src/models/feedModel";
-import { validate } from "../utils/validator";
-import { FeedService } from "./FeedService";
+import { Product } from "../models/ProductModel.js";
+import { validate } from "../utils/validator.js";
+import { FeedService } from "./FeedService.js";
 
 const isOffer = (oldPrice?: string, newPrice?: string) => {
     if (!oldPrice || !newPrice) {

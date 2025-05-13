@@ -27,5 +27,9 @@ export interface PagedProducts {
     totalItems: number;
     limit: number;
     items: Product[];
+    previousPage?: string | null;
+    nextPage?: string | null;
+    hasPreviousPage?: boolean;
+    hasNextPage?: boolean;
 }
 
