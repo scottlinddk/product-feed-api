@@ -4,7 +4,7 @@
   "description": "Få dit feed fra Partner Ads ud som JSON",
   "type": "module",
   "scripts": {
-    "build": "tsc --output dist",
+    "build": "tsc",
     "start": "tsx src/server.ts",
     "dev": "tsx --watch src/server.ts",
     "lint": "eslint 'src/**/*.ts'"
