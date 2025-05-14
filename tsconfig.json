@@ -15,7 +15,7 @@
         "isolatedModules": true,
         "noEmit": false,
         "outDir": "public",
-        "rootDir": "./src"
+        "rootDir": "./"
     },
     "ts-node": {
         "esm": true,
