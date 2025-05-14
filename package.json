@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "tsx src/api/server.ts",
-    "dev": "tsx --watch src/api/index.ts",
-    "lint": "eslint 'src/**/*.ts'"
+    "start": "tsx api/server.ts",
+    "dev": "tsx --watch api/index.ts",
+    "lint": "eslint '**/*.ts'"
   },
  
   "keywords": [],
