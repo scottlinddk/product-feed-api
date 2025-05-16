@@ -13,7 +13,7 @@ router.get(`${baseUrl}getById/:feedID`, (req, res, next) => {
     }
 });
 // Define a route to serve the HTML file
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     // Send the HTML file as the response
     res.sendFile(path.join(__dirname, '../index.html'));
 });
