@@ -2,7 +2,7 @@ import { Router } from "express";
 const router = Router();
 import { getProducts } from "../controllers/feedController.js";
 
-import path from 'path';
+const path = require('path');
 
 const baseUrl: string = "/feed/";
 
