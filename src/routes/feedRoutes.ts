@@ -2,6 +2,8 @@ import { Router } from "express";
 const router = Router();
 import { getProducts } from "../controllers/feedController.js";
 
+import path from 'path';
+
 const baseUrl: string = "/feed/";
 
 router.get(`${baseUrl}getById/:feedID`, (req, res, next) => {
@@ -15,7 +17,7 @@ router.get(`${baseUrl}getById/:feedID`, (req, res, next) => {
 // Define a route to serve the HTML file
 router.get('/', (req, res) => {
     // Send the HTML file as the response
-    res.sendFile('../index.html');
+    res.sendFile(path.join(__dirname'../index.html'));
 });
 
 
