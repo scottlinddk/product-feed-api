@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === "production") {
     baseUrl = "/";
 }
 app.get('/', (req, res) => {
-  res.sendStatus(204);
+  res.sendStatus(204).json({ message: "No content" });
 });
 app.use(`${baseUrl}`, feedRoutes);
 app.use(errorHandler);
