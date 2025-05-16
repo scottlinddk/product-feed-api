@@ -2,8 +2,6 @@ import { Router } from "express";
 const router = Router();
 import { getProducts } from "../controllers/feedController.js";
 
-const path = require('path');
-
 const baseUrl: string = "/feed/";
 
 router.get(`${baseUrl}getById/:feedID`, (req, res, next) => {
@@ -13,11 +11,6 @@ router.get(`${baseUrl}getById/:feedID`, (req, res, next) => {
         console.error(error);
         res.status(500).json({ message: "Internal Server Error" });
     }
-});
-// Define a route to serve the HTML file
-router.get('/', (req, res) => {
-    // Send the HTML file as the response
-    res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 
